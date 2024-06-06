@@ -18,6 +18,10 @@ class childClass {
         // Initialize event handlers
         this.__initEvents();
     }
+    
+    __initEvents() {
+        $(`a#item-${this.__id}`).click(this.__clickResolver.bind(this, this.__id));
+    }
 
     __appendRow() {
         $('.list-group').append(this.__$generateRow());
